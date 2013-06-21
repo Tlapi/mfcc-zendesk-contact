@@ -124,12 +124,11 @@ class ContactController extends AbstractActionController
                         'error' => true,
                         'form'  => $form
             ));
-            $view->setTemplate('org-heigl-contact/contact/index');
+            $view->setTemplate('mfcc-zendesk-contact/contact/index');
             return $view;
         }
         // create ticket
-        $this->createTicket($form->getData());
-
+        //$this->createTicket($form->getData());
         return $this->redirect()->toRoute('contact/thank-you');
     }
 
@@ -157,13 +156,15 @@ class ContactController extends AbstractActionController
      */
     public function thankYouAction()
     {
+    	/*
         $headers = $this->request->getHeaders();
         if (!$headers->has('Referer')
             || !preg_match('#/contact$#',
         $headers->get('Referer')->getFieldValue())
         ) {
             return $this->redirect()->toRoute('contact');
-        }
+        }*/
+    	// TODO check referer
 
         return array();
 

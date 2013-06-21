@@ -55,24 +55,6 @@ class ContactForm extends Form
         $this->setName('contact');
         
         $this->setHydrator(new ArraySerializable);
-
-        $this->add(array(
-        		'name' => 'from',
-        		'type' => 'Zend\Form\Element\Text',
-        		'options' => array(
-                	'label'     => 'From:',
-                	'required'  => true,
-                	'validators' => array(
-        				array(
-        					'name' => 'EmailAddress',
-        					'options' => array(
-	                        	'allow'  => HostnameValidator::ALLOW_DNS,
-	                        	'domain' => true,
-        					),
-        				),
-        			),
-        		)
-        	));
         
         $this->add(array(
         		'name' => 'from',
@@ -145,7 +127,7 @@ class ContactForm extends Form
         $country->getValidatorChain()
                 ->addByName('Identical', array('token'=>''));
         
-        $subject = new Input('subject');
+        $subject = new Input('name');
         $subject->isRequired(true);
         $subject->setAllowEmpty(false);
         
