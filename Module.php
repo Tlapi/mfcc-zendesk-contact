@@ -25,7 +25,7 @@
  * @author    Jan Tlapak <jan@mfcc.cz>
  * @copyright 2011-2013 Jan Tlapak
  * @license   http://www.opesource.org/licenses/mit-license.php MIT-License
- * @link      http://github.com/heiglandreas/php.ug
+ * @link      https://github.com/Tlapi
  */
 
 namespace MfccZendeskContact;

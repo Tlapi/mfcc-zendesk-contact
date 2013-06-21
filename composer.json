@@ -3,7 +3,7 @@
     "type" : "library",
     "description": "Contact-Form using a honeypot for spam-protection and zendesk API for creating ticket",
     "keywords": ["contact","form","zendesk","spam","ticket"],
-    "homepage": "http://github.com/heiglandreas/OrgHeiglContact",
+    "homepage": "https://github.com/Tlapi/mfcc-zendesk-contact",
     "license": "MIT",
     "authors": [
         {
