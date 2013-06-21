@@ -128,7 +128,8 @@ class ContactController extends AbstractActionController
             return $view;
         }
         // create ticket
-        //$this->createTicket($form->getData());
+        $this->createTicket($form->getData());
+        
         return $this->redirect()->toRoute('contact/thank-you');
     }
 
