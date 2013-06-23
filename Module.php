@@ -63,4 +63,20 @@ class Module
     			),
     	);
     }
+    
+    public function getViewHelperConfig()
+    {
+    	return array(
+    			'factories' => array(
+    					'mfccContactWidget' => function ($sm) {
+    						$locator = $sm->getServiceLocator();
+    						$viewHelper = new View\Helper\MfccContactWidget;
+    						//$viewHelper->setViewTemplate($locator->get('zfcuser_module_options')->getUserLoginWidgetViewTemplate());
+    						$viewHelper->setContactForm($locator->get('MfccZendeskContact\Form\ContactForm'));
+    						return $viewHelper;
+    					},
+    			),
+    	);
+    
+    }
 }
