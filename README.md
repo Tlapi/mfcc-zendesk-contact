@@ -25,8 +25,7 @@ Extend form:
 
 Extend base contact form using init listeners like this:
 
-``
-$em = $eventManager->getSharedManager();
+```$em = $eventManager->getSharedManager();
 $em->attach(
 	'MfccZendeskContact\Form\ContactForm',
 	'init',
@@ -45,7 +44,7 @@ $em->attach(
 			)
 		);
 	}
-);``
+);```
 
 Note that you need to render and process form for yourself if you extend it.
 
