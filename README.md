@@ -20,4 +20,33 @@ View plugin:
 
 Use ``echo $this->mfccContactWidget()`` to show contact form anywhere in your views
 
+Extend form:
+------
+
+Extend base contact form using init listeners like this:
+
+``
+$em = $eventManager->getSharedManager();
+$em->attach(
+	'MfccZendeskContact\Form\ContactForm',
+	'init',
+	function($e)
+	{
+		$form = $e->getTarget();
+		$form->add(
+			array(
+				'name' => 'username',
+				'options' => array(
+					'label' => 'Username',
+				),
+				'attributes' => array(
+					'type'  => 'text',
+				),
+			)
+		);
+	}
+);``
+
+Note that you need to render and process form for yourself if you extend it.
+
 

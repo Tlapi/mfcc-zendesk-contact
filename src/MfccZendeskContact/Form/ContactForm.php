@@ -35,7 +35,7 @@ use Zend\InputFilter\Input;
 use Zend\InputFilter\InputFilter;
 //use Zend\Validator;
 
-use Zend\Form\Form;
+use ZfcBase\Form\ProvidesEventsForm;
 use Zend\Form\Element;
 use Zend\Validator\Hostname as HostnameValidator;
 //use MfccZendeskContact\Validator\IsEmpty as EmptyValidator;
@@ -43,7 +43,7 @@ use Zend\Validator\Hostname as HostnameValidator;
 /**
  * The Contact-Form
  */
-class ContactForm extends Form
+class ContactForm extends ProvidesEventsForm
 {
     /**
      * Initialize the form
@@ -147,6 +147,7 @@ class ContactForm extends Form
         
         $this->setInputFilter($filter);
 
+        $this->getEventManager()->trigger('init', $this);
         
         return $this;
     }
