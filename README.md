@@ -48,4 +48,10 @@ Extend base contact form using init listeners like this:
 
 Note that you need to render and process form for yourself if you extend it.
 
+To process your customized form, you can use zendesk service. Customize your zendesk service with ``$this->zendeskService->addTag($tag)``, ``$this->zendeskService->addCustomField($key, $value)`` etc. See ``ZendeskService.php``
+
+And create ticket like this:
+
+	$this->zendeskService->createTicket($fromName, $fromEmail, $yourCustomizedBody);
+
 
