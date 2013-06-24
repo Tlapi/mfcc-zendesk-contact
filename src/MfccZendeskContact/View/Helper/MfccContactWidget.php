@@ -29,7 +29,7 @@ class MfccContactWidget extends AbstractHelper
     public function __invoke($options = array())
     {
         $vm = new ViewModel(array(
-            'form' => $this->getContactForm()->init(),
+            'form' => $this->getContactForm(),
         ));
         $vm->setTemplate('mfcc-zendesk-contact/contact/index.phtml');
         

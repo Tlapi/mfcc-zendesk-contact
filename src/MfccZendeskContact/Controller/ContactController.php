@@ -79,7 +79,6 @@ class ContactController extends AbstractActionController
     public function setContactForm(ContactForm $contactForm)
     {
         $this->form = $contactForm;
-        $this->form->init();
         return $this;
     }
     

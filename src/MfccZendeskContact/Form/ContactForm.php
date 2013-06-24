@@ -50,9 +50,13 @@ class ContactForm extends Form
      *
      * @return ContactForm
      */
-    public function init()	
+    public function __construct($name = null)	
     {
-        $this->setName('contact');
+    	if(!isset($name)){
+    		$name = 'contact';
+    	}
+    	parent::__construct($name);
+        $this->setName($name);
         
         $this->setHydrator(new ArraySerializable);
         
