@@ -15,4 +15,9 @@ Usage:
 3. Link to the Form using ``$this->url('contact')``
 4. There is no step four.
 
+View plugin:
+------
+
+Use ``echo $this->mfccContactWidget()`` to show contact form anywhere in your views
+
 
