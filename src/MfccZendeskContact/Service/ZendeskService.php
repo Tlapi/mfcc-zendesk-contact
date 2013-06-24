@@ -148,7 +148,7 @@ class ZendeskService {
 				'status' => $this->status, 
 				'group_id' => $this->group_id, // support group id
 				'assignee_id' => $this->assignee_id,
-				'collaborator_ids' => $this->collaborator_ids,
+				'collaborator_ids' => $this->collaborators,
 				'tags' => $this->tags,
 				'custom_fields' => $this->custom_fields
 		);
