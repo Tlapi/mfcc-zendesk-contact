@@ -11,7 +11,6 @@ The idea of the honeypot is based on a blogpost by Lorna Jane Mitchell (accordin
 
 Install:
 ------
-## Composer
 
 The suggested installation method is via [composer](http://getcomposer.org/):
 
