@@ -1,3 +1,5 @@
+[![Total Downloads](https://poser.pugx.org/mfcc/zendesk-contact/downloads.png)](https://packagist.org/packages/rinomau/mva-crud)
+
 -----------------
 MfccZendeskContact
 -----------------
@@ -6,6 +8,16 @@ This Modules provides a simple contact-form with spam-protection using a
 honeypot and Zendesk API for ticket creation. It is based on the OrgHeiglContact module by Andreas Heigl (https://github.com/heiglandreas/OrgHeiglContact).
 
 The idea of the honeypot is based on a blogpost by Lorna Jane Mitchell (according to Andreas Heigl)
+
+Install:
+------
+## Composer
+
+The suggested installation method is via [composer](http://getcomposer.org/):
+
+```sh
+php composer.phar require mfcc/zendesk-contact:dev-master
+```
 
 Usage:
 ------
