@@ -34,35 +34,41 @@ Use ``echo $this->mfccContactWidget()`` to show contact form anywhere in your vi
 Extend form:
 ------
 
-Extend base contact form using init listeners like this:
-
-	$em = $eventManager->getSharedManager();
-	$em->attach(
-		'MfccZendeskContact\Form\ContactForm',
-		'init',
-		function($e)
-		{
-			$form = $e->getTarget();
-			$form->add(
-				array(
-					'name' => 'username',
-					'options' => array(
-						'label' => 'Username',
-					),
-					'attributes' => array(
-						'type'  => 'text',
-					),
-				)
-			);
-		}
-	);
+Extend base contact form using init listeners in your Module.php like this:
+	public function onBootstrap(MvcEvent $e)
+    	{
+	        $eventManager        = $e->getApplication()->getEventManager();
+	        $moduleRouteListener = new ModuleRouteListener();
+	        $moduleRouteListener->attach($eventManager);
+	        
+		$em = $eventManager->getSharedManager();
+		$em->attach(
+			'MfccZendeskContact\Form\ContactForm',
+			'init',
+			function($e)
+			{
+				$form = $e->getTarget();
+				$form->add(
+					array(
+						'name' => 'username',
+						'options' => array(
+							'label' => 'Username',
+						),
+						'attributes' => array(
+							'type'  => 'text',
+						),
+					)
+				);
+			}
+		);
+	}
 
 Note that you need to render and process form for yourself if you extend it.
 
-To process your customized form, you can use zendesk service. Customize your zendesk service with ``$this->zendeskService->addTag($tag)``, ``$this->zendeskService->addCustomField($key, $value)`` etc. See ``ZendeskService.php``
+To process your customized form, you can use zendesk service. Customize your zendesk service with ``$this->getServiceLocator()->get('zendeskService')->addTag($tag)``, ``$this->getServiceLocator()->get('zendeskService')->addCustomField($key, $value)`` etc. See ``ZendeskService.php``
 
 And create ticket like this:
 
-	$this->zendeskService->createTicket($fromName, $fromEmail, $yourCustomizedBody);
+	$this->getServiceLocator()->get('zendeskService')->createTicket($fromName, $fromEmail, $yourCustomizedBody);
 
 
