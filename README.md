@@ -35,6 +35,7 @@ Extend form:
 ------
 
 Extend base contact form using init listeners in your Module.php like this:
+
 	public function onBootstrap(MvcEvent $e)
     	{
 	        $eventManager        = $e->getApplication()->getEventManager();
@@ -65,7 +66,11 @@ Extend base contact form using init listeners in your Module.php like this:
 
 Note that you need to render and process form for yourself if you extend it.
 
-To process your customized form, you can use zendesk service. Customize your zendesk service with ``$this->getServiceLocator()->get('zendeskService')->addTag($tag)``, ``$this->getServiceLocator()->get('zendeskService')->addCustomField($key, $value)`` etc. See ``ZendeskService.php``
+To process your customized form, you can use zendesk service. Customize your zendesk service with 
+``$this->getServiceLocator()->get('zendeskService')->addTag($tag)``
+``$this->getServiceLocator()->get('zendeskService')->addCustomField($key, $value)`` 
+etc. 
+See ``ZendeskService.php``
 
 And create ticket like this:
 
