@@ -6,6 +6,10 @@ use Zend\View\Helper\AbstractHelper;
 use MfccZendeskContact\Form\ContactForm as ContactForm;
 use Zend\View\Model\ViewModel;
 
+/**
+ * Class MfccContactWidget
+ * @package MfccZendeskContact\View\Helper
+ */
 class MfccContactWidget extends AbstractHelper
 {
     /**

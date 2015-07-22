@@ -72,7 +72,7 @@ class ContactController extends AbstractActionController
     /**
      * Set the given form as contact-form
      *
-     * @param ContactForm $form
+     * @param ContactForm $contactForm
      *
      * @return ContactController
      */
@@ -98,7 +98,7 @@ class ContactController extends AbstractActionController
     /**
      * Display a contact-form
      *
-     * @return void
+     * @return array
      */
     public function indexAction()
     {
@@ -108,7 +108,7 @@ class ContactController extends AbstractActionController
     /**
      * Process the form
      *
-     * @return void
+     * @return ViewModel
      */
     public function processAction()
     {
@@ -135,9 +135,8 @@ class ContactController extends AbstractActionController
     /**
      * Create zendesk ticket
      *
-     * @param array $params The parameters to include in the ticket
-     *
-     * @return boolean
+     * @param $values
+     * @return bool
      */
     protected function createTicket($values)
     {
@@ -152,7 +151,7 @@ class ContactController extends AbstractActionController
     /**
      * Display a thank-you message
      *
-     * @return void
+     * @return array
      */
     public function thankYouAction()
     {
@@ -167,6 +166,5 @@ class ContactController extends AbstractActionController
     	// TODO check referer
 
         return array();
-
     }
 }

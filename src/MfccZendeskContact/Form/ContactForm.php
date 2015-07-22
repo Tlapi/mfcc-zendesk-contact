@@ -29,30 +29,25 @@
 namespace MfccZendeskContact\Form;
 
 use Zend\Stdlib\Hydrator\ArraySerializable;
-
 use Zend\InputFilter\Input;
-
 use Zend\InputFilter\InputFilter;
-//use Zend\Validator;
-
 use ZfcBase\Form\ProvidesEventsForm;
 use Zend\Form\Element;
 use Zend\Validator\Hostname as HostnameValidator;
-//use MfccZendeskContact\Validator\IsEmpty as EmptyValidator;
 
 /**
  * The Contact-Form
  */
 class ContactForm extends ProvidesEventsForm
 {
-    /**
-     * Initialize the form
-     *
-     * @return ContactForm
-     */
+	/**
+	 * Initialize the form
+	 *
+	 * @param null $name
+	 */
     public function __construct($name = null)	
     {
-    	if(!isset($name)){
+    	if (!isset($name)){
     		$name = 'contact';
     	}
     	parent::__construct($name);
